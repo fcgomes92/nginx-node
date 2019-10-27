@@ -1,0 +1,16 @@
+version: "3"
+services:
+  web:
+    image: drinks-web:latest
+    build:
+      context: ./
+    ports:
+      - "8080:80"
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - /data/pm2
+      - ./:/app
+      - ./container/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./container/Makefile:/entrypoint/Makefile
+    command: dev
