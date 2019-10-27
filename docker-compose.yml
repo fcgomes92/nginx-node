@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    image: drinks-web:latest
+    image: fcgomes92/nginx-node:latest
     build:
       context: ./
     ports:
