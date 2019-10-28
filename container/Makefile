@@ -9,5 +9,5 @@ start:
 
 dev:
 	@echo "Loading dev"
-	pm2 start --watch
+	pm2 start
 	nginx -g "daemon off;"

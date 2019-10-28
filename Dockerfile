@@ -2,6 +2,8 @@ FROM nginx:latest
 EXPOSE 80
 EXPOSE 3000
 
+ENV SERVER_NAME='example.com'
+
 RUN mkdir -p /data/pm2
 RUN mkdir -p /entrypoint
 
