@@ -29,12 +29,6 @@ COPY ./container/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY ./container/nginx/nginx.conf /etc/nginx/nginx.conf
 RUN nginx -t
 
-# Install the app dependencies
-COPY package.json ./
-RUN yarn install --no-cache --production
-
-COPY . .
-
 ENV PM2_HOME=/data/pm2
 
 COPY ./container/Makefile /entrypoint/Makefile
